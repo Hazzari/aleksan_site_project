@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'aleksan_site_project/css/bootstrap.min.css' %}">
+    <title>
+        {% block title %}
+            Page!
+        {% endblock %}
+    </title>
+</head>
+{#Тело документа#}
+<body>
+
+{% block body %}
+
+    <h1>Override me!</h1>
+
+{% endblock %}
+
+
+<script src="{% static 'aleksan_site_project/js/jquery.slim.min.js' %}"></script>
+<script src="{% static 'aleksan_site_project/js/bootstrap.min.js' %}"></script>
+</body>
+</html>
