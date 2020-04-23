@@ -9,6 +9,17 @@ def index(request):
 
     return render(request, 'homepage/index.html', args)
 
+
+class Sysadmin(TemplateView):
+    template_name = 'homepage/sysadmin.html'
+
+
+class Developer(TemplateView):
+    template_name = 'homepage/developer.html'
+
+
+class Contacts(TemplateView):
+    template_name = 'homepage/cont.html'
 #
 # class IndexPageView(TemplateView):
 #     # пустого класса уже достаточно чтобы сделать запрос

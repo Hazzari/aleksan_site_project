@@ -9,6 +9,17 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'aleksan_site_project/css/bootstrap.min.css' %}">
     <link rel="shortcut icon" type="image/png" href="{% static "images/favicon.ico" %}">
+    <style>
+        a:link {
+            color: #153ad0; /* Цвет ссылок */
+            padding: 2px; /* Поля вокруг текста */
+        }
+
+        a:hover {
+            background: #d0d02a; /* Цвет фона под ссылкой */
+            color: #ffe; /* Цвет ссылки */
+        }
+    </style>
     <title>
         {% block title %}
             Page!
@@ -17,13 +28,29 @@
 </head>
 {#Тело документа#}
 <body>
-
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'homepage:index' %}">Опыт работы</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'homepage:sysadmin' %}">Сисадмин <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'homepage:developer' %}">Разработчик</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'homepage:contacts' %}">Контакты</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 {% block body %}
-
     <h1>Override me!</h1>
-
 {% endblock %}
-
 
 <script src="{% static 'aleksan_site_project/js/jquery.slim.min.js' %}"></script>
 <script src="{% static 'aleksan_site_project/js/bootstrap.min.js' %}"></script>
