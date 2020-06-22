@@ -14,7 +14,6 @@
             color: #153ad0; /* Цвет ссылок */
             padding: 2px; /* Поля вокруг текста */
         }
-
         a:hover {
             background: #d0d02a; /* Цвет фона под ссылкой */
             color: #ffe; /* Цвет ссылки */
@@ -39,10 +38,10 @@
             <li class="nav-item active">
                 <a class="nav-link" href="{% url 'homepage:sysadmin' %}">Системный администратор<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="{% url 'homepage:developer' %}">Разработчик Python</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="{% url 'homepage:contacts' %}">Контакты</a>
             </li>
         </ul>
@@ -51,7 +50,6 @@
 {% block body %}
     <h1>Override me!</h1>
 {% endblock %}
-
 <script src="{% static 'aleksan_site_project/js/jquery.slim.min.js' %}"></script>
 <script src="{% static 'aleksan_site_project/js/bootstrap.min.js' %}"></script>
 </body>
