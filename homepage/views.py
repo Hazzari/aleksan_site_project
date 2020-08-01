@@ -1,10 +1,21 @@
+from datetime import date
+
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.views.decorators.http import require_GET
 
+dateOfBirth = date(1984, 1, 7)
+
+
+def calculate_age(dateOfBirth):
+    today = date.today()
+    return today.year - dateOfBirth.year - ((today.month, today.day) < (dateOfBirth.month, dateOfBirth.day))
+
 
 def index(request):
-    args = {'arg1': 1,
+    age = calculate_age(dateOfBirth)
+
+    args = {'age': age,
             'arg2': 2}
 
     return render(request, 'homepage/index.html', args)
