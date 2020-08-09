@@ -1,0 +1,26 @@
+name: Deploy to Live
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Deploy files
+      id: deploy
+      uses: Pendect/action-rsyncer@v1.1.0
+      env:
+        DEPLOY_KEY: ${{secrets.DEPLOY_KEY}}
+      with:
+        flags: '-avzr --delete'
+        ssh_options: '-p 23332'
+        src: '/'
+        dest: 'aleksan@aleksan.site:/home/aleksan/work/aleksan_site'
+
+    - name: Display status from deploy
+      run: echo "${{ steps.deploy.outputs.status }}"v
