@@ -9,17 +9,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'aleksan_site_project/css/bootstrap.min.css' %}">
     <link rel="shortcut icon" type="image/png" href="{% static "images/favicon.ico" %}">
-    <style>
-        a:link {
-            color: #153ad0; /* Цвет ссылок */
-            padding: 2px; /* Поля вокруг текста */
-        }
-
-        a:hover {
-            background: #d0d02a; /* Цвет фона под ссылкой */
-            color: #ffe; /* Цвет ссылки */
-        }
-    </style>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function (m, e, t, r, i, k, a) {
@@ -41,32 +30,37 @@
         <div><img src="https://mc.yandex.ru/watch/65894257" style="position:absolute; left:-9999px;" alt=""/></div>
     </noscript>
     <!-- /Yandex.Metrika counter -->
-
     <title>
         {% block title %}
             Page!
         {% endblock %}
     </title>
 </head>
-{#Тело документа#}
+
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="{% url 'homepage:index' %}">Опыт работы</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top align-text-bottom">
+    <a class="navbar-brand" href="{% url 'homepage:index' %}">HOME</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-
             <li class="nav-item active">
-                <a class="nav-link" href="{% url 'homepage:developer' %}">Разработчик Python</a>
+                <a class="nav-link" href="{% url 'homepage:index' %}">Разработчик Python<span
+                        class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="{% url 'homepage:sysadmin' %}">Системный администратор<span class="sr-only">(current)</span></a>
             </li>
+
             <li class="nav-item active">
                 <a class="nav-link" href="{% url 'homepage:contacts' %}">Контакты</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="https://hh.ru/resume/46013043ff07baa4d30039ed1f396b43644853"><img
+                        src="{% static 'images/min-hh-red.png' %}" alt="Logo"
+                        style="width:21px;"></a>
             </li>
         </ul>
     </div>

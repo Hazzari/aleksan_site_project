@@ -2,9 +2,8 @@ from datetime import date
 
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from django.views.decorators.http import require_GET
 
-dateOfBirth = date(1984, 1, 7)
+DATE_OF_BIRTH = date(1984, 1, 7)
 
 
 def calculate_age(dateOfBirth):
@@ -13,10 +12,9 @@ def calculate_age(dateOfBirth):
 
 
 def index(request):
-    age = calculate_age(dateOfBirth)
+    age = calculate_age(DATE_OF_BIRTH)
 
-    args = {'age': age,
-            'arg2': 2}
+    args = {'age': age, }
 
     return render(request, 'homepage/index.html', args)
 
@@ -28,13 +26,12 @@ class Sysadmin(TemplateView):
 class Developer(TemplateView):
     template_name = 'homepage/developer.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        age = calculate_age(DATE_OF_BIRTH)
+        context['age'] = age
+        return context
+
 
 class Contacts(TemplateView):
     template_name = 'homepage/cont.html'
-#
-# class IndexPageView(TemplateView):
-#     # пустого класса уже достаточно чтобы сделать запрос
-#     # МОЖНО СДЕЛАТЬ ЕЩЕ ПРОЩЕ- Сразу импортировать в URLS.PY и там уже:
-#     # в path('', views.TemplateView.as_view(), template_name = 'homepage/index.html'),
-#     # Сразу передать страницу
-#     template_name = 'homepage/index.html'
