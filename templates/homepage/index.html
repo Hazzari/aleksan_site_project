@@ -6,10 +6,10 @@
 {% block body %}
     {#    <img src="..." alt="..." class="img-thumbnail">#}
     <div class="mx-auto my-2 my-sm-3 my-lg-4 p-3 container">
-        <h1 class="head">О себе</h1>
-        <span class="user-select-none">Имя: <b>Александр</b></span><br>
-        <span class="user-select-none">Возраст: {{ age }} лет.</span>
-        <p>Работаю в IT более 20 лет.</p>
+        <h1 class="head ">О себе</h1>
+        <div class="">Имя: <b>Александр</b><br>
+            <span class="">Возраст: {{ age }} лет.</span>
+            <p>Работаю в IT более 20 лет.</p></div>
         <p>Я начинающий <b>Python программист.</b></p>
 
         <p class="text-sm-left " style="max-width: 750px;">
@@ -19,11 +19,8 @@
             Небольшой опыт командной работы на open-source проекте.
             Могу братья за отдельные задачи самостоятельно.
             Умею искать информацию в интернете, а если не получается, знаю как спросить у более опытных коллег.
-
         </p>
-
         <p>Подыскиваю постоянное место работы или проект.</p>
-
         <h2>Стек основных технологий:</h2>
         <ul>
             <li><b>Python</b></li>
@@ -35,13 +32,10 @@
 
         <h3>Дополнительные навыки:</h3>
         <ul>
-            <li>ООП</li>
             <li> SQL
                 <ul>
                     <li>CRUD</li>
-                    <li>SQLAlchemy</li>
                     <li>peewee</li>
-                    <li>sqlite3</li>
                 </ul>
             </li>
 
@@ -51,12 +45,10 @@
                     <li>Начал вникать в TDD</li>
                 </ul>
             </li>
-
+            <li>ООП</li>
             <li>Framework:
                 <ul>
                     <li>Django</li>
-                    <li>Flask</li>
-                    <li>FastAPI</li>
                     <li>Starlette</li>
                 </ul>
             </li>
@@ -64,15 +56,21 @@
             <li>Базовые знания HTML/CSS</li>
             <li>Git:
                 <ul>
-                    <li>работаю в командной строке</li>
+                    <li>Работаю в командной строке</li>
                     <li>GitHub, GitLab, Bitbucket, Space Jetbrains</li>
                 </ul>
             </li>
             <li>Linux:
                 <ul>
-                    <li>Дружу с серверами CentOS, Ubuntu</li>
+                    <li>Использую сервера CentOS, Ubuntu</li>
                 </ul>
             </li>
+        </ul>
+        <h3 class="text-monospace">На очереди:</h3>
+        <ul>
+            <li>Asyncio</li>
+            <li>RabbitMQ</li>
+            <li>Основы JS</li>
         </ul>
     </div>
 {% endblock %}
