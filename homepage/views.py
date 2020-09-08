@@ -20,11 +20,11 @@ def index(request):
 
 
 class Sysadmin(TemplateView):
-    template_name = 'homepage/sysadmin.html'
+    template_name = 'homepage/sys.html'
 
 
 class Developer(TemplateView):
-    template_name = 'homepage/developer.html'
+    template_name = 'homepage/dev.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -34,4 +34,4 @@ class Developer(TemplateView):
 
 
 class Contacts(TemplateView):
-    template_name = 'homepage/cont.html'
+    template_name = 'homepage/contact.html'
