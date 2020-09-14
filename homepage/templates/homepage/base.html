@@ -44,7 +44,6 @@
     </title>
 </head>
 
-
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top vertical-align ">
     <a class="navbar-brand" href="{% url 'homepage:index' %}">
         <img src="{% static 'images/favicon.ico' %}" width="25" height="25" class="d-inline-block align-top"
@@ -81,6 +80,7 @@
     </div>
 </nav>
 
+<body style="background-image: url('{% static 'images/bg-w2.png' %}')">
 
 {% block body %}
     <h1>Override me!</h1>
